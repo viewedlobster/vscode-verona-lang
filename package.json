@@ -1,0 +1,47 @@
+{
+  "name": "verona-syntax",
+  "displayName": "verona-syntax",
+  "description": "verona syntax highlighting",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.84.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "verona",
+        "aliases": [
+          "verona",
+          "verona"
+        ],
+        "extensions": [
+          ".ver",
+          ".verona"
+        ],
+        "configuration": "./language-configuration.json"
+      },
+      {
+        "id": "verona-md-injection"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "verona",
+        "scopeName": "source.verona",
+        "path": "./syntaxes/verona.tmLanguage.json"
+      },
+      {
+        "language": "verona-md-injection",
+        "scopeName": "markdown.verona.codeblock",
+        "path": "./syntaxes/verona.md-injection.json",
+        "injectTo": ["text.html.markdown"],
+        "embeddedLanguages": {
+          "meta.embedded.block.verona": "verona"
+        }
+      }
+    ]
+  }
+}
